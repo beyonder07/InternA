@@ -2,15 +2,15 @@ import Image from 'next/image';
 
 export default function Hero() {
   return (
-    <section className="relative h-[70vh] md:h-[80vh] bg-[#f7f4ed] flex flex-col justify-center items-start text-left px-4 md:px-16 overflow-hidden" id="hero">
+    <section className="relative bg-[#f7f4ed] px-6 md:px-8 py-20 flex flex-col items-start justify-center min-h-[60vh]" id="hero">
       <div className="absolute inset-0 z-0">
-        <Image src="/images/image%20(1).webp" alt="Calm clouds background" fill priority className="object-cover w-full h-full" />
+        <Image src="/images/image%20(1).webp" alt="Calm clouds background" fill priority className="object-cover w-full h-full opacity-60" />
       </div>
-      <div className="absolute inset-0 bg-black/40 z-10" />
-      <div className="relative z-20 w-full flex flex-col items-start justify-center h-full max-w-xl">
-        <h1 className="text-3xl md:text-5xl font-serif font-light mb-6 text-white drop-shadow-lg leading-tight">Psychological Care for<br />Change, Insight, and Well-Being</h1>
-        <h2 className="text-lg md:text-2xl font-light mb-10 text-white drop-shadow">Offering individual psychotherapy for adults in Los Angeles and online</h2>
-        <a href="#contact" className="mt-2 px-8 py-4 bg-white text-stone-800 font-medium rounded-full shadow-lg text-base md:text-lg uppercase tracking-wider hover:bg-stone-100 transition-all focus:outline-none focus:ring-2 focus:ring-stone-400 focus:ring-offset-2">Book a Free Consult</a>
+      <div className="absolute inset-0 bg-[#f7f4ed]/80 z-10" />
+      <div className="relative z-20 max-w-[700px] flex flex-col items-start justify-center">
+        <h1 className="text-2xl md:text-4xl font-serif font-light mb-4 text-stone-900 leading-tight">Psychological Care for<br />Change, Insight, and Well-Being</h1>
+        <h2 className="text-base md:text-xl font-light mb-8 text-stone-700 leading-snug">Offering individual psychotherapy for adults in Los Angeles and online</h2>
+        <a href="#contact" className="px-6 py-3 border border-stone-300 bg-white text-stone-900 font-medium rounded-full text-sm md:text-base uppercase tracking-wide hover:bg-stone-100 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-stone-400 focus:ring-offset-2">Book a Free Consult</a>
       </div>
     </section>
   );

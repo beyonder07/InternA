@@ -50,9 +50,34 @@ html {
 }
 
 body {
-  @apply font-sans text-stone-700 bg-[#f7f4ed] antialiased;
+  @apply font-sans text-stone-700 bg-[#f7f4ed] antialiased leading-relaxed;
+  font-family: 'Inter', sans-serif;
 }
 
 h1, h2, h3, h4, h5, h6, .font-serif {
   font-family: 'Lora', serif;
+}
+
+.section-spacing {
+  @apply py-20 md:py-24;
+}
+
+.prose {
+  @apply max-w-none text-lg leading-relaxed;
+}
+
+input, textarea, select {
+  @apply border border-stone-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-stone-400 transition-all duration-200;
+}
+
+input[type="checkbox"] {
+  @apply h-4 w-4 rounded border-stone-300 focus:ring-2 focus:ring-stone-400 accent-stone-700;
+}
+
+label {
+  @apply text-sm font-medium text-stone-700;
+}
+
+button {
+  @apply transition-all duration-300;
 }
