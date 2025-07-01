@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 const services = [
   {
     title: "Therapy for Healthcare Providers and Students",
@@ -24,12 +26,12 @@ export default function Services() {
     <section id="services" className="py-24 px-4 bg-[#f7f4ed]">
       <div className="max-w-6xl mx-auto">
         <h2 className="text-center text-4xl font-serif font-light mb-16 text-stone-800">Areas of Focus</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-16">
           {services.map((service, idx) => (
-            <div key={idx} className="bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 p-8 flex flex-col items-center text-center scale-100 hover:scale-105">
-              <img src={service.image} alt={service.title} className="w-40 h-40 object-cover rounded-full mb-6 shadow" />
-              <h3 className="text-xl font-serif font-light mb-4 text-stone-800">{service.title}</h3>
-              <p className="text-stone-600 font-light text-base">{service.description}</p>
+            <div key={idx} className="bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 p-8 flex flex-col items-center text-center scale-100 hover:scale-105 max-w-xs mx-auto md:max-w-none">
+              <Image src={service.image} alt={service.title} width={128} height={128} className="w-32 h-32 md:w-40 md:h-40 object-cover rounded-full mb-6 shadow" />
+              <h3 className="text-lg md:text-xl font-serif font-light mb-4 text-stone-800">{service.title}</h3>
+              <p className="text-stone-600 font-light text-sm md:text-base">{service.description}</p>
             </div>
           ))}
         </div>

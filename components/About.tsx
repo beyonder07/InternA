@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 export default function About() {
   return (
     <section id="about" className="py-24 px-4 bg-white">
@@ -17,7 +19,7 @@ export default function About() {
           </div>
         </div>
         <div className="flex justify-center">
-          <img src="/images/image.webp" alt="Dr. Serena Blake" className="w-80 h-96 object-cover rounded-xl shadow-lg border border-stone-200" />
+          <Image src="/images/image.webp" alt="Dr. Serena Blake" width={320} height={384} priority className="w-80 h-96 object-cover rounded-xl shadow-lg border border-stone-200" />
         </div>
       </div>
     </section>

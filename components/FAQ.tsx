@@ -27,17 +27,21 @@ export default function FAQ() {
             <div key={idx} className="border-b border-stone-200 pb-6">
               <button
                 onClick={() => setOpen(open === idx ? null : idx)}
-                className={`w-full text-left flex justify-between items-center py-4 transition-colors duration-300 rounded-md focus:outline-none ${open === idx ? 'bg-stone-100' : 'hover:bg-stone-50'}`}
+                className={`w-full text-left flex justify-between items-center py-4 transition-all duration-300 rounded-md focus:outline-none ${open === idx ? 'bg-stone-100' : 'hover:bg-stone-50'}`}
+                aria-expanded={open === idx}
+                aria-controls={`faq-panel-${idx}`}
               >
                 <span className="text-xl font-semibold text-stone-800">{faq.question}</span>
                 {open === idx ? (
-                  <ChevronUp className="w-5 h-5 text-stone-700" />
+                  <ChevronUp className="w-5 h-5 text-stone-700 transition-all duration-300" />
                 ) : (
-                  <ChevronDown className="w-5 h-5 text-stone-400" />
+                  <ChevronDown className="w-5 h-5 text-stone-400 transition-all duration-300" />
                 )}
               </button>
               <div
+                id={`faq-panel-${idx}`}
                 className={`grid transition-all duration-300 ease-in-out ${open === idx ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'} overflow-hidden`}
+                aria-hidden={open !== idx}
               >
                 <div className="min-h-0">
                   <p className="text-stone-600 leading-relaxed pt-2">{faq.answer}</p>
