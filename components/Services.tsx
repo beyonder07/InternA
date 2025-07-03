@@ -32,7 +32,11 @@ export default function Services() {
       </div>
       <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10">
         {services.map((service, idx) => (
-          <div key={idx} className="bg-white rounded-2xl shadow-md hover:shadow-lg transition-all duration-300 p-8 flex flex-col items-center text-center border border-stone-100">
+          <div
+            key={idx}
+            className="bg-white rounded-2xl shadow-md border border-stone-100 p-8 flex flex-col items-center text-center transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-2xl hover:border-stone-300 focus-within:-translate-y-2 focus-within:shadow-2xl focus-within:border-stone-300 cursor-pointer"
+            tabIndex={0}
+          >
             <Image src={service.image} alt={service.title} width={112} height={112} className="w-28 h-28 object-cover rounded-full mb-6 shadow" />
             <h3 className="text-lg font-serif font-light mb-3 text-stone-900 leading-snug">{service.title}</h3>
             <p className="text-stone-700 font-light text-base leading-relaxed">{service.description}</p>
