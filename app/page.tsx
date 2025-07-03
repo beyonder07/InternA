@@ -1,7 +1,7 @@
 "use client"
 
 import type React from "react"
-import { useState } from "react"
+import { useState, useRef } from "react"
 import Image from "next/image"
 import { ChevronDown, ChevronUp, Phone, Mail, MapPin, Clock } from "lucide-react"
 import { Input } from "@/components/ui/input"
@@ -13,6 +13,22 @@ import FAQ from '@/components/FAQ';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
 import ContactHero from '@/components/ContactHero';
+import { motion, useInView } from 'framer-motion';
+
+function FadeInSection({ children, delay = 0 }) {
+  const ref = useRef(null);
+  const inView = useInView(ref, { once: true, margin: '-100px' });
+  return (
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, y: 40 }}
+      animate={inView ? { opacity: 1, y: 0 } : {}}
+      transition={{ duration: 0.7, ease: 'easeOut', delay }}
+    >
+      {children}
+    </motion.div>
+  );
+}
 
 export default function HomePage() {
   const [openFaq, setOpenFaq] = useState<number | null>(null)
@@ -112,13 +128,13 @@ export default function HomePage() {
   return (
     <div className="min-h-screen bg-[#f7f4ed] text-stone-700 font-sans">
       <Header />
-      <Hero />
-      <About />
-      <Services />
-      <FAQ />
-      <ContactHero />
-      <Contact />
-      <Footer />
+      <FadeInSection delay={0.1}><Hero /></FadeInSection>
+      <FadeInSection delay={0.2}><About /></FadeInSection>
+      <FadeInSection delay={0.3}><Services /></FadeInSection>
+      <FadeInSection delay={0.4}><FAQ /></FadeInSection>
+      <FadeInSection delay={0.5}><ContactHero /></FadeInSection>
+      <FadeInSection delay={0.6}><Contact /></FadeInSection>
+      <FadeInSection delay={0.7}><Footer /></FadeInSection>
     </div>
   )
 }
