@@ -12,6 +12,7 @@ import Services from '@/components/Services';
 import FAQ from '@/components/FAQ';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
+import ContactHero from '@/components/ContactHero';
 
 export default function HomePage() {
   const [openFaq, setOpenFaq] = useState<number | null>(null)
@@ -115,6 +116,7 @@ export default function HomePage() {
       <About />
       <Services />
       <FAQ />
+      <ContactHero />
       <Contact />
       <Footer />
     </div>

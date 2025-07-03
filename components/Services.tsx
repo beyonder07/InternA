@@ -23,18 +23,21 @@ const services = [
 
 export default function Services() {
   return (
-    <section id="services" className="section-spacing px-4 bg-[#f7f4ed]">
-      <div className="max-w-[700px] mx-auto">
-        <h2 className="text-left text-2xl md:text-3xl font-serif font-light mb-10 text-stone-800">Areas of Focus</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {services.map((service, idx) => (
-            <div key={idx} className="bg-white rounded-xl shadow-sm hover:shadow-md transition-all duration-300 p-5 flex flex-col items-center text-center">
-              <Image src={service.image} alt={service.title} width={96} height={96} className="w-24 h-24 md:w-28 md:h-28 object-cover rounded-full mb-4 shadow-sm" />
-              <h3 className="text-base font-serif font-light mb-2 text-stone-800">{service.title}</h3>
-              <p className="text-stone-600 font-light text-sm leading-relaxed">{service.description}</p>
-            </div>
-          ))}
-        </div>
+    <section id="services" className="bg-[#f7f4ed] py-24 px-4">
+      <div className="max-w-3xl mx-auto mb-12">
+        <blockquote className="text-center text-xl md:text-2xl font-serif text-stone-700 mb-8 md:mb-12 leading-relaxed">
+          Therapy can be a space where you invest in yourself—one of the highest forms of self-care.
+        </blockquote>
+        <h2 className="text-center text-3xl md:text-4xl font-serif font-light mb-12 text-stone-900 tracking-tight">Areas of Focus</h2>
+      </div>
+      <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10">
+        {services.map((service, idx) => (
+          <div key={idx} className="bg-white rounded-2xl shadow-md hover:shadow-lg transition-all duration-300 p-8 flex flex-col items-center text-center border border-stone-100">
+            <Image src={service.image} alt={service.title} width={112} height={112} className="w-28 h-28 object-cover rounded-full mb-6 shadow" />
+            <h3 className="text-lg font-serif font-light mb-3 text-stone-900 leading-snug">{service.title}</h3>
+            <p className="text-stone-700 font-light text-base leading-relaxed">{service.description}</p>
+          </div>
+        ))}
       </div>
     </section>
   );
